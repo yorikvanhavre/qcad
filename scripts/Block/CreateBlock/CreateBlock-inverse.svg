@@ -1,0 +1,14 @@
+<svg width="512" xmlns="http://www.w3.org/2000/svg" height="512">
+<defs/>
+<g fill="#fff6d5">
+<path d="m376,312-304,0 0-224 304,0 0,224z"/>
+<path stroke="#fff" stroke-width="15" d="m488,400a120,120 0 1,1 -240,0 120,120 0 1,1 240,0z" transform="matrix(1.06667 0 0 1.06667 -64.53333 -130.66665)"/>
+</g>
+<g fill="none" stroke-width="16">
+<path stroke="#fff" stroke-linecap="square" d="m376,312-304,0 0-224 304,0 0,224z"/>
+<g stroke="#f00">
+<path d="m72,280 0,64"/>
+<path d="m40,312 64,0"/>
+</g>
+</g>
+</svg>
