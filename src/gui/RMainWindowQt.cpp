@@ -37,6 +37,13 @@
 RMainWindowQt::RMainWindowQt(QWidget* parent, bool hasMdiArea) :
     QMainWindow(parent), RMainWindow(), mdiArea(NULL) {
 
+// uncomment for unified tool bars under Mac:
+//#if QT_VERSION >= 0x050201
+//# ifdef Q_OS_MAC
+//    setUnifiedTitleAndToolBarOnMac(true);
+//# endif
+//#endif
+
     if (hasMdiArea) {
         mdiArea = new QMdiArea(this);
         mdiArea->setViewMode(QMdiArea::TabbedView);
@@ -277,6 +284,7 @@ void RMainWindowQt::closeEvent(QCloseEvent* e) {
 }
 
 void RMainWindowQt::dragEnterEvent(QDragEnterEvent* event) {
+    qDebug() << "RMainWindowQt::dragEnterEvent: " << event;
     emit dragEnter(event);
 }
 
@@ -501,10 +509,12 @@ bool RMainWindowQt::event(QEvent* e) {
             QList<QMdiSubWindow *> subWindows = mdiArea->subWindowList();
             if (subWindows.size()==1) {
                 //mdiArea->setActiveSubWindow(subWindows.at(0));
+                qDebug() << "RMainWindowQt::event: closing subwindow";
                 subWindows.at(0)->close();
             }
         }
         else {
+            qDebug() << "RMainWindowQt::event: closing active subwindow";
             mdiArea->closeActiveSubWindow();
         }
         return true;

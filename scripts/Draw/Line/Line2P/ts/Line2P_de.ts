@@ -4,7 +4,7 @@
 <context>
     <name>Line2P</name>
     <message>
-        <location filename="../Line2P.js" line="+69"/>
+        <location filename="../Line2P.js" line="+67"/>
         <source>First point</source>
         <translation>Erster Punkt</translation>
     </message>
@@ -58,17 +58,32 @@
         <translation>Sequenz schliessen</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+7"/>
+        <source>,, C</source>
+        <translation>,, C</translation>
+    </message>
+    <message>
+        <location line="+20"/>
         <source>Undo Previous Segment</source>
         <translation>Letztes Segment rückgängig</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+7"/>
+        <source>,, U</source>
+        <translation>,, U</translation>
+    </message>
+    <message>
+        <location line="+13"/>
         <source>Redo Segment</source>
         <translation>Letztes Segment wiederherstellen</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+7"/>
+        <source>,, R</source>
+        <translation>,, R</translation>
+    </message>
+    <message>
+        <location line="+20"/>
         <source>Restrict length or angle</source>
         <translation>Länge oder Winkel einschränken</translation>
     </message>

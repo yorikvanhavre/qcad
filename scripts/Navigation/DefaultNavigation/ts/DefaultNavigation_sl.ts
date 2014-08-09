@@ -39,7 +39,7 @@
     <message>
         <location line="+7"/>
         <source>Limit zoom and scroll to prevent overflows</source>
-        <translation type="unfinished"></translation>
+        <translation>Preventivno omeji povečavo in drsenje</translation>
     </message>
 </context>
 </TS>

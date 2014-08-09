@@ -4,14 +4,14 @@
 <context>
     <name>PointPowerCenter</name>
     <message>
-        <location filename="../PointPowerCenter.js" line="+44"/>
+        <location filename="../PointPowerCenter.js" line="+45"/>
         <source>No solution</source>
-        <translation type="unfinished"></translation>
+        <translation>Ni rešitve</translation>
     </message>
     <message>
         <location filename="../PointPowerCenterInit.js" line="+2"/>
         <source>Power center of three circles</source>
-        <translation type="unfinished"></translation>
+        <translation>Radialno središče treh krogov</translation>
     </message>
 </context>
 </TS>

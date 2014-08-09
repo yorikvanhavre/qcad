@@ -70,6 +70,7 @@
 #include "RSplineEntity.h"
 #include "RTextEntity.h"
 #include "RTraceEntity.h"
+#include "RViewportEntity.h"
 #include "RXLineEntity.h"
 
 
@@ -130,6 +131,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    qDebug() << "creating QApplication";
     RSingleApplication* app = new RSingleApplication(appId, argc, argv, guiEnabled);
 
 #if defined(Q_OS_MAC) || defined(Q_OS_LINUX)
@@ -218,6 +220,7 @@ int main(int argc, char *argv[]) {
     RSplineEntity::init();
     RXLineEntity::init();
     RRayEntity::init();
+    RViewportEntity::init();
 
     RTextBasedEntity::init();
     RTextEntity::init();

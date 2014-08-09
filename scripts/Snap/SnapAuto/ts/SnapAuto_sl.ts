@@ -6,58 +6,58 @@
     <message>
         <location filename="../PreferencesPage.ui" line="+17"/>
         <source>Auto Snap</source>
-        <translation type="unfinished">Samodejno pritrdi</translation>
+        <translation>Samodejno pritrdi</translation>
     </message>
     <message>
         <location line="+6"/>
         <source>Intersections</source>
-        <translation type="unfinished"></translation>
+        <translation>Presečišča</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>End points</source>
-        <translation type="unfinished"></translation>
+        <translation>Končne točke</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>Middle points</source>
-        <translation type="unfinished"></translation>
+        <translation>Vmesne točke</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>Center points</source>
-        <translation type="unfinished"></translation>
+        <translation>Središčne točke</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Perpendicular</source>
-        <translation type="unfinished"></translation>
+        <translation>Pravokotno</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>Reference points</source>
-        <translation type="unfinished"></translation>
+        <translation>Referenčne točke</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>Grid points</source>
-        <translation type="unfinished"></translation>
+        <translation>Točke mreže</translation>
     </message>
     <message>
         <location line="+10"/>
         <source>Points on entity</source>
-        <translation type="unfinished"></translation>
+        <translation>Točke na entiteti</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Free positioning</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosta postavitev</translation>
     </message>
 </context>
 <context>
     <name>SnapAuto</name>
     <message>
-        <location filename="../SnapAuto.js" line="+29"/>
+        <location filename="../SnapAuto.js" line="+34"/>
         <source>Snap</source>
         <translation>Pritrdi</translation>
     </message>

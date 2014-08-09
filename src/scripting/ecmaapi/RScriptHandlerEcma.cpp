@@ -257,6 +257,7 @@
 #include "REcmaSharedPointerTriangle.h"
 #include "REcmaSharedPointerUcs.h"
 #include "REcmaSharedPointerView.h"
+#include "REcmaSharedPointerViewportEntity.h"
 #include "REcmaSharedPointerXLine.h"
 #include "REcmaSharedPointerXLineEntity.h"
 #include "REcmaSnap.h"
@@ -313,6 +314,8 @@
 #include "REcmaViewFocusListenerAdapter.h"
 #include "REcmaViewListener.h"
 #include "REcmaViewListenerAdapter.h"
+#include "REcmaViewportData.h"
+#include "REcmaViewportEntity.h"
 #include "REcmaWebView.h"
 #include "REcmaWheelEvent.h"
 #include "REcmaXLine.h"
@@ -461,9 +464,15 @@ RScriptHandlerEcma::RScriptHandlerEcma() : engine(NULL), debugger(NULL) {
     classQLineEdit.property("prototype").setProperty("validator",
             engine->newFunction(ecmaQLineEditValidator));
 
+//    QScriptValue classQWebPage = globalObject.property("QWebPage");
+//    classQWebPage.property("prototype").setProperty("setLinkDelegationPolicy",
+//            engine->newFunction(ecmaQWebPageSetLinkDelegationPolicy));
+
+# if QT_VERSION < 0x050301
     QScriptValue classQFile = globalObject.property("QFile");
     classQFile.property("prototype").setProperty("close",
             engine->newFunction(ecmaQFileClose));
+# endif
 #endif
 
     QScriptValue classQt = globalObject.property("Qt");
@@ -670,6 +679,10 @@ RScriptHandlerEcma::RScriptHandlerEcma() : engine(NULL), debugger(NULL) {
     REcmaTraceData::init(*engine);
     REcmaTraceEntity::init(*engine);
     REcmaSharedPointerTraceEntity::init(*engine);
+
+    REcmaViewportData::init(*engine);
+    REcmaViewportEntity::init(*engine);
+    REcmaSharedPointerViewportEntity::init(*engine);
 
     REcmaSplineData::init(*engine);
     REcmaSplineEntity::init(*engine);
@@ -1694,6 +1707,22 @@ QScriptValue RScriptHandlerEcma::ecmaQLineEditValidator(QScriptContext* context,
     return qScriptValueFromValue(engine, cppResult);
     //return engine->newQObject();
 }
+
+//QScriptValue RScriptHandlerEcma::ecmaQWebPageSetLinkDelegationPolicy(QScriptContext* context, QScriptEngine* engine) {
+//    QWebPage* self = REcmaHelper::scriptValueTo<QWebPage>(context->thisObject());
+//    if (self == NULL) {
+//        return throwError("QWebPage.setLinkDelegationPolicy(): Object is NULL", context);
+//    }
+
+//    if (context->argumentCount() != 1) {
+//        return throwError("Wrong number/types of arguments for QLineEdit::validator.", context);
+//    }
+
+//    QWebPage::LinkDelegationPolicy val = (QWebPage::LinkDelegationPolicy)context->argument(0).toInteger();
+//    self->setLinkDelegationPolicy(val);
+
+//    return engine->undefinedValue();
+//}
 
 QScriptValue RScriptHandlerEcma::ecmaMSleep(QScriptContext* context,
         QScriptEngine* engine) {

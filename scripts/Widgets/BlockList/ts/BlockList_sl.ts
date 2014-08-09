@@ -13,7 +13,7 @@
     <message>
         <location line="-71"/>
         <source>Widgets</source>
-        <translation type="unfinished"></translation>
+        <translation>Gradniki</translation>
     </message>
 </context>
 </TS>

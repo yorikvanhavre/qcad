@@ -103,7 +103,7 @@ public:
         return const_cast<REntityData*>(this)->castToShape();
     }
 
-    virtual RBox getBoundingBox() const;
+    virtual RBox getBoundingBox(bool ignoreEmpty=false) const;
 
     /**
      * \return Vector of bounding boxes that contain this entity.
@@ -112,8 +112,8 @@ public:
      * (e.g. spatial index algorithms). The default implementation
      * returns the bounding box that contains the whole entity.
      */
-    virtual QList<RBox> getBoundingBoxes() const {
-        return QList<RBox>() << getBoundingBox();
+    virtual QList<RBox> getBoundingBoxes(bool ignoreEmpty=false) const {
+        return QList<RBox>() << getBoundingBox(ignoreEmpty);
     }
 
     /**
@@ -185,16 +185,16 @@ public:
     }
 
     virtual RLinetype::Id getLinetypeId(bool resolve,
-        const QStack<RBlockReferenceEntity*>& blockRefStack) const;
+        const QStack<REntity*>& blockRefStack) const;
 
     RLineweight::Lineweight getLineweight() const {
         return lineweight;
     }
 
     virtual RLineweight::Lineweight getLineweight(bool resolve,
-        const QStack<RBlockReferenceEntity*>& blockRefStack) const;
+        const QStack<REntity*>& blockRefStack) const;
 
-    double getLineweightInUnits(const QStack<RBlockReferenceEntity*>& blockRefStack) const;
+    double getLineweightInUnits(const QStack<REntity*>& blockRefStack) const;
 
     void setLineweight(RLineweight::Lineweight lineweight) {
         this->lineweight = lineweight;
@@ -208,8 +208,7 @@ public:
         return color;
     }
 
-    virtual RColor getColor(bool resolve,
-        const QStack<RBlockReferenceEntity*>& blockRefStack) const;
+    virtual RColor getColor(bool resolve, const QStack<REntity *>& blockRefStack) const;
 
     /**
      * Can be overwritten to return internal, resolved reference points.

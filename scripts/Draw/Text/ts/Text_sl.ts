@@ -182,7 +182,7 @@
     <message>
         <location line="+1"/>
         <source>No-break space</source>
-        <translation type="unfinished"></translation>
+        <translation>Brez preloma presledka</translation>
     </message>
     <message>
         <location filename="../TextDialog/TextDialog.ui" line="+14"/>

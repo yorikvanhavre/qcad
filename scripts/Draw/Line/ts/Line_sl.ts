@@ -21,17 +21,17 @@
     <message>
         <location filename="../Line.ui" line="+17"/>
         <source>Line Segment</source>
-        <translation type="unfinished"></translation>
+        <translation>Segment črte</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Infinite Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Neskončna črta</translation>
     </message>
     <message>
         <location line="+17"/>
         <source>Ray</source>
-        <translation type="unfinished"></translation>
+        <translation>Poltrak</translation>
     </message>
 </context>
 </TS>

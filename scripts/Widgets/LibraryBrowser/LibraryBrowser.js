@@ -51,6 +51,7 @@ LibraryBrowser.maxProgress = Math.max(RSettings.getIntValue("LibraryBrowser/Item
 
 LibraryBrowser.tagResultItemsPerPage = RSettings.getIntValue("LibraryBrowser/ItemsPerPage", 36);
 LibraryBrowser.tagResultPage = 1;
+LibraryBrowser.fsModel = undefined;
 
 LibraryBrowser.ignoredCategories = [
     "creator",
@@ -806,14 +807,14 @@ LibraryBrowser.sourceChanged = function(text) {
         return;
     }
 
-    var fsModel = new RFileSystemModel();
-    fsModel.setIconProvider(new FileIconProvider());
-    //fsModel.readOnly = true;
+    LibraryBrowser.fsModel = new RFileSystemModel();
+    LibraryBrowser.fsModel.setIconProvider(new FileIconProvider());
+    //LibraryBrowser.fsModel.readOnly = true;
     var filter = new QDir.Filters(QDir.Dirs, QDir.NoDotAndDotDot);
-    fsModel.setFilter(filter);
+    LibraryBrowser.fsModel.setFilter(filter);
 
     // the Qt way of hiding all folders named "_META"...
-    fsModel.setNameFilterDisables(false);
+    LibraryBrowser.fsModel.setNameFilterDisables(false);
     var nf = [];
     var ch;
     // TODO:
@@ -827,17 +828,17 @@ LibraryBrowser.sourceChanged = function(text) {
         ch = sprintf("%c*", 48 + i);
         nf.push(ch);
     }
-    fsModel.setNameFilters(nf);
+    LibraryBrowser.fsModel.setNameFilters(nf);
 
-    fsModel.setRootPath(libPath.path());
+    LibraryBrowser.fsModel.setRootPath(libPath.path());
     var dirTree = formWidget.findChild("DirectoryTree");
 
     // this should be possible, but isn't properly scriptable:
     //var proxyModel = new QSortFilterProxyModel(dirTree);
-    //proxyModel.setSourceModel(fsModel);
+    //proxyModel.setSourceModel(LibraryBrowser.fsModel);
     //dirTree.setModel(proxyModel.castToQAbstractItemModel());
 
-    dirTree.setModel(fsModel);
+    dirTree.setModel(LibraryBrowser.fsModel);
 
     // context menu for directories
 //    dirTree.contextMenuPolicy = Qt.CustomContextMenu;
@@ -858,11 +859,11 @@ LibraryBrowser.sourceChanged = function(text) {
 
     var selectionModel = dirTree.selectionModel();
     selectionModel.selectionChanged.connect(LibraryBrowser, "directoryChanged");
-    var index = fsModel.index(libPath.path());
+    var index = LibraryBrowser.fsModel.index(libPath.path());
     dirTree.setRootIndex(index);
 
-    fsModel.rowsInserted.connect(function(parent, start, end) {
-        var fileName = new QFileInfo(fsModel.rootPath()).fileName();
+    LibraryBrowser.fsModel.rowsInserted.connect(function(parent, start, end) {
+        var fileName = new QFileInfo(LibraryBrowser.fsModel.rootPath()).fileName();
         var model = dirTree.model();
         if (fileName !== model.data(parent)) {
             return;
@@ -920,7 +921,8 @@ LibraryBrowser.directoryChanged = function(selected, deselected) {
     // TODO: needed every time or one time only?
     // -> possibly every time (update view according to settings).
     LibraryBrowser.initItemView(listView);
-    var dirPath = index.model().filePath(index);
+    //var dirPath = index.model().filePath(index);
+    var dirPath = LibraryBrowser.fsModel.filePath(index);
 
     // TODO:
     //var source = DirectoryPeer.doSelectSourceByName(sourceCombo.itemData(sourceCombo.currentIndex));
@@ -930,9 +932,9 @@ LibraryBrowser.directoryChanged = function(selected, deselected) {
 //    }
 
     //qDebug("LibraryBrowser.directoryChanged: dirPath: ", dirPath);
-    QApplication.setOverrideCursor(new QCursor(Qt.WaitCursor));
+    setOverrideCursor(new QCursor(Qt.WaitCursor));
     LibraryBrowser.updateFsView(dirPath, model);
-    QApplication.restoreOverrideCursor();
+    restoreOverrideCursor();
 };
 
 /**

@@ -76,6 +76,7 @@
 #include <QMdiArea>
 #include <QMdiSubWindow>
 #include <QMenu>
+#include <QMimeData>
 #include <QModelIndex>
 #include <QMouseEvent>
 #include <QMoveEvent>
@@ -139,6 +140,7 @@ Q_DECLARE_METATYPE(char*)
 Q_DECLARE_METATYPE(const char*)
 
 Q_DECLARE_METATYPE(QAbstractItemModel*)
+Q_DECLARE_METATYPE(const QAbstractItemModel*)
 Q_DECLARE_METATYPE(QAbstractProxyModel*)
 Q_DECLARE_METATYPE(QSortFilterProxyModel*)
 Q_DECLARE_METATYPE(QAction*)
@@ -199,6 +201,8 @@ Q_DECLARE_METATYPE(QMainWindow*)
 Q_DECLARE_METATYPE(QMdiArea*)
 Q_DECLARE_METATYPE(QMdiSubWindow*)
 Q_DECLARE_METATYPE(QMenu*)
+Q_DECLARE_METATYPE(QMimeData*)
+Q_DECLARE_METATYPE(const QMimeData*)
 Q_DECLARE_METATYPE(QModelIndex)
 Q_DECLARE_METATYPE(QModelIndex*)
 Q_DECLARE_METATYPE(QMouseEvent*)

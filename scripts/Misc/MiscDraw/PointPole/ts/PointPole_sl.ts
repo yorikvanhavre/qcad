@@ -4,19 +4,19 @@
 <context>
     <name>PointPole</name>
     <message>
-        <location filename="../PointPole.js" line="+66"/>
+        <location filename="../PointPole.js" line="+67"/>
         <source>Arc or circle</source>
-        <translation type="unfinished"></translation>
+        <translation>Krog ali lok</translation>
     </message>
     <message>
         <location line="+9"/>
         <source>Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Črta</translation>
     </message>
     <message>
         <location filename="../PointPoleInit.js" line="+2"/>
         <source>Pole of Line and Circle</source>
-        <translation type="unfinished"></translation>
+        <translation>Tečaj črte in koga</translation>
     </message>
 </context>
 </TS>

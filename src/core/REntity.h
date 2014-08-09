@@ -227,7 +227,7 @@ public:
     }
 
     RLinetype::Id getLinetypeId(bool resolve,
-        const QStack<RBlockReferenceEntity*>& blockRefStack) const;
+        const QStack<REntity*>& blockRefStack) const;
 
     /**
      * \copydoc REntityData::setLineweight
@@ -244,9 +244,9 @@ public:
     }
 
     RLineweight::Lineweight getLineweight(bool resolve,
-        const QStack<RBlockReferenceEntity*>& blockRefStack) const;
+        const QStack<REntity*>& blockRefStack) const;
 
-    double getLineweightInUnits(const QStack<RBlockReferenceEntity*>& blockRefStack) const;
+    double getLineweightInUnits(const QStack<REntity*>& blockRefStack) const;
 
     /**
      * \copydoc REntityData::setColor
@@ -262,22 +262,22 @@ public:
         return getData().getColor();
     }
 
-    RColor getColor(bool resolve, const QStack<RBlockReferenceEntity*>& blockRefStack);
+    RColor getColor(bool resolve, const QStack<REntity*>& blockRefStack);
 
     void copyAttributesFrom(REntity* entity, bool copyBlockId=true);
 
     /**
      * \copydoc REntityData::getBoundingBox
      */
-    virtual RBox getBoundingBox() const {
-        return getData().getBoundingBox();
+    virtual RBox getBoundingBox(bool ignoreEmpty=false) const {
+        return getData().getBoundingBox(ignoreEmpty);
     }
 
     /**
      * \copydoc REntityData::getBoundingBoxes
      */
-    virtual QList<RBox> getBoundingBoxes(/*REntity::Id subEntityId = REntity::INVALID_ID*/) const {
-        return getData().getBoundingBoxes(/*subEntityId*/);
+    virtual QList<RBox> getBoundingBoxes(bool ignoreEmpty=false) const {
+        return getData().getBoundingBoxes(ignoreEmpty);
     }
 
     /**
@@ -540,5 +540,6 @@ Q_DECLARE_METATYPE(REntity*)
 Q_DECLARE_METATYPE(QSharedPointer<REntity>)
 Q_DECLARE_METATYPE(QSharedPointer<REntity>*)
 Q_DECLARE_METATYPE(QStack<REntity*>)
+Q_DECLARE_METATYPE(QStack<REntity*>*)
 
 #endif

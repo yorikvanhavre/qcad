@@ -31,9 +31,6 @@ RLeaderData::RLeaderData(RDocument* document, const RLeaderData& data)
     }
 }
 
-/**
- *
- */
 RLeaderData::RLeaderData(const RPolyline& polyline, bool arrowHead)
     : RPolyline(polyline),
       arrowHead(arrowHead) {
@@ -47,7 +44,17 @@ double RLeaderData::getDimasz() const {
         dimasz = document->getKnownVariable(RS::DIMASZ, dimasz).toDouble();
     }
 
-    return dimasz;
+    return dimasz * getDimscale();
+}
+
+double RLeaderData::getDimscale() const {
+    double dimscale = 1.0;
+
+    if (document!=NULL) {
+        dimscale = document->getKnownVariable(RS::DIMSCALE, dimscale).toDouble();
+    }
+
+    return dimscale;
 }
 
 QList<RVector> RLeaderData::getReferencePoints(

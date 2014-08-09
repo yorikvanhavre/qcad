@@ -92,7 +92,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+294"/>
+        <location line="+295"/>
         <source>Widgets</source>
         <translation type="unfinished"></translation>
     </message>
@@ -121,6 +121,11 @@
     <message>
         <location line="+20"/>
         <source>Handle:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../PreferencesPage.ui" line="+17"/>
+        <source>Display Z coordinates</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

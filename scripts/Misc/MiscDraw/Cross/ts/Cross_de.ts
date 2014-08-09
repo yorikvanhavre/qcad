@@ -8,19 +8,27 @@
         <translation type="obsolete">Bogen, Kreis, Ellipse oder Ellipsenbogen wählen</translation>
     </message>
     <message>
-        <location filename="../CrossInit.js" line="+2"/>
         <source>Centreline Cross</source>
-        <translation>Mittellinien</translation>
+        <translation type="obsolete">Mittellinien</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Draw centreline cross in arc, circle or ellipses</source>
-        <translation>Mittellinien in Bogen, Kreis oder Ellipsen zeichnen</translation>
+        <translation type="obsolete">Mittellinien in Bogen, Kreis oder Ellipsen zeichnen</translation>
     </message>
     <message>
         <location filename="../Cross.js" line="+53"/>
         <source>Select arc, circle, ellipse or elliptical arc</source>
         <translation>Bogen, Kreis, Ellipse oder Ellipsenbogen wählen</translation>
+    </message>
+    <message>
+        <location filename="../CrossInit.js" line="+2"/>
+        <source>Centerline Cross</source>
+        <translation>Mittellinien</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Draw centerline cross in arcs, circles or ellipses</source>
+        <translation>Mittellinien in Bögen, Kreisen oder Ellipsen zeichnen</translation>
     </message>
 </context>
 <context>
@@ -60,6 +68,11 @@
         <location line="+5"/>
         <source>Total length</source>
         <translation>Totale Länge</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Percent</source>
+        <translation>Prozent</translation>
     </message>
     <message>
         <location line="+15"/>

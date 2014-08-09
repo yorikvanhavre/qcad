@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sl_SI">
+<TS version="2.0" language="sl_SI">
 <context>
     <name>DimensionSettings</name>
     <message>
@@ -70,7 +70,7 @@
         <translation>Geodetske enote</translation>
     </message>
     <message>
-        <location line="+138"/>
+        <location line="+161"/>
         <source>Unit / Format</source>
         <translation>Enota / Zapis</translation>
     </message>
@@ -136,6 +136,16 @@
     </message>
     <message>
         <location line="+23"/>
+        <source>Font</source>
+        <translation>Pisava</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Dimension label font:</source>
+        <translation>Pisava kotiranj:</translation>
+    </message>
+    <message>
+        <location line="+13"/>
         <source>Label Format</source>
         <translation>Oblika napisov</translation>
     </message>

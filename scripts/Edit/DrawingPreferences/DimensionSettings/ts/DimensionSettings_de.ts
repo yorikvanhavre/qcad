@@ -130,6 +130,16 @@
     </message>
     <message>
         <location line="+23"/>
+        <source>Font</source>
+        <translation>Schriftart</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Dimension label font:</source>
+        <translation>Bemassungstext Schriftart:</translation>
+    </message>
+    <message>
+        <location line="+13"/>
         <source>Label Format</source>
         <translation>Beschriftungsformat</translation>
     </message>
@@ -176,7 +186,7 @@
         <translation>Vorschau</translation>
     </message>
     <message>
-        <location filename="../DimensionSettings.js" line="+138"/>
+        <location filename="../DimensionSettings.js" line="+161"/>
         <source>Unit / Format</source>
         <translation>Einheit / Format</translation>
     </message>

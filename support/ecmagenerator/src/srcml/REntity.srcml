@@ -801,7 +801,7 @@ dir="./core" filename="REntity.h">
       <argument_list>&lt;
       <argument>
       <name>
-      RBlockReferenceEntity</name>*</argument>&gt;</argument_list></name>&amp;</type>
+      REntity</name>*</argument>&gt;</argument_list></name>&amp;</type>
       <name>blockRefStack</name>
     </decl>
   </param>)</parameter_list>
@@ -888,7 +888,7 @@ dir="./core" filename="REntity.h">
       <argument_list>&lt;
       <argument>
       <name>
-      RBlockReferenceEntity</name>*</argument>&gt;</argument_list></name>&amp;</type>
+      REntity</name>*</argument>&gt;</argument_list></name>&amp;</type>
       <name>blockRefStack</name>
     </decl>
   </param>)</parameter_list>
@@ -907,7 +907,7 @@ dir="./core" filename="REntity.h">
       <argument_list>&lt;
       <argument>
       <name>
-      RBlockReferenceEntity</name>*</argument>&gt;</argument_list></name>&amp;</type>
+      REntity</name>*</argument>&gt;</argument_list></name>&amp;</type>
       <name>blockRefStack</name>
     </decl>
   </param>)</parameter_list>
@@ -988,7 +988,7 @@ dir="./core" filename="REntity.h">
       <argument_list>&lt;
       <argument>
       <name>
-      RBlockReferenceEntity</name>*</argument>&gt;</argument_list></name>&amp;</type>
+      REntity</name>*</argument>&gt;</argument_list></name>&amp;</type>
       <name>blockRefStack</name>
     </decl>
   </param>)</parameter_list>;</function_decl>
@@ -1025,7 +1025,19 @@ dir="./core" filename="REntity.h">
       <name>RBox</name>
     </type>
     <name>getBoundingBox</name>
-    <parameter_list>()</parameter_list>
+    <parameter_list>(
+    <param>
+      <decl>
+      <type>
+        <name>bool</name>
+      </type>
+      <name>ignoreEmpty</name>=
+      <init>
+        <expr>
+          <name>false</name>
+        </expr>
+      </init></decl>
+    </param>)</parameter_list>
     <specifier>const</specifier>
     <block>{ 
     <return>return 
@@ -1036,7 +1048,12 @@ dir="./core" filename="REntity.h">
     </call>.
     <call>
       <name>getBoundingBox</name>
-      <argument_list>()</argument_list>
+      <argument_list>(
+      <argument>
+        <expr>
+          <name>ignoreEmpty</name>
+        </expr>
+      </argument>)</argument_list>
     </call></expr>;</return>}</block>
   </function>
   <comment type="block">/** * \copydoc
@@ -1052,8 +1069,18 @@ dir="./core" filename="REntity.h">
     </type>
     <name>getBoundingBoxes</name>
     <parameter_list>(
-    <comment type="block">/*REntity::Id subEntityId =
-    REntity::INVALID_ID*/</comment>)</parameter_list>
+    <param>
+      <decl>
+      <type>
+        <name>bool</name>
+      </type>
+      <name>ignoreEmpty</name>=
+      <init>
+        <expr>
+          <name>false</name>
+        </expr>
+      </init></decl>
+    </param>)</parameter_list>
     <specifier>const</specifier>
     <block>{ 
     <return>return 
@@ -1065,8 +1092,11 @@ dir="./core" filename="REntity.h">
     <call>
       <name>getBoundingBoxes</name>
       <argument_list>(
-      <comment type="block">
-      /*subEntityId*/</comment>)</argument_list>
+      <argument>
+        <expr>
+          <name>ignoreEmpty</name>
+        </expr>
+      </argument>)</argument_list>
     </call></expr>;</return>}</block>
   </function>
   <comment type="block">/** * \copydoc
@@ -2599,6 +2629,11 @@ dir="./core" filename="REntity.h">
     <name>Q_DECLARE_METATYPE</name>
     <argument_list>(
     <argument>QStack&lt;REntity*&gt;</argument>)</argument_list>
+  </macro>
+  <macro>
+    <name>Q_DECLARE_METATYPE</name>
+    <argument_list>(
+    <argument>QStack&lt;REntity*&gt;*</argument>)</argument_list>
   </macro>
   <cpp:endif>#
   <cpp:directive>endif</cpp:directive></cpp:endif>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sl_SI">
+<TS version="2.0" language="sl_SI">
 <context>
     <name>QObject</name>
     <message>
@@ -218,24 +218,30 @@
         <location line="+1"/>
         <location line="+1"/>
         <location line="+1"/>
+        <location filename="../src/core/RViewportEntity.cpp" line="+61"/>
+        <location line="+1"/>
+        <location line="+1"/>
         <source>Position</source>
         <translation>Pozicija</translation>
     </message>
     <message>
         <location line="-2"/>
         <location line="+3"/>
+        <location filename="../src/core/RViewportEntity.cpp" line="-2"/>
         <source>X</source>
         <translation>X</translation>
     </message>
     <message>
         <location line="-2"/>
         <location line="+3"/>
+        <location filename="../src/core/RViewportEntity.cpp" line="+1"/>
         <source>Y</source>
         <translation>Y</translation>
     </message>
     <message>
         <location line="-2"/>
         <location line="+3"/>
+        <location filename="../src/core/RViewportEntity.cpp" line="+1"/>
         <source>Z</source>
         <translation>Z</translation>
     </message>
@@ -243,6 +249,7 @@
         <location line="-2"/>
         <location line="+1"/>
         <location line="+1"/>
+        <location filename="../src/core/RViewportEntity.cpp" line="+3"/>
         <source>Scale</source>
         <translation>Razmerje</translation>
     </message>
@@ -292,32 +299,42 @@
         <location line="+1"/>
         <location line="+1"/>
         <source>Boundary</source>
-        <translation type="unfinished"></translation>
+        <translation>Okvir</translation>
     </message>
     <message>
         <location line="-3"/>
         <source>Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Levo</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation>Dno</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Right</source>
-        <translation type="unfinished"></translation>
+        <translation>Desno</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Vrh</translation>
     </message>
     <message>
         <location filename="../src/core/RPropertyTypeId.cpp" line="+106"/>
         <source>Custom</source>
         <translation>Po meri</translation>
+    </message>
+    <message>
+        <location filename="../src/core/RViewportEntity.cpp" line="-2"/>
+        <source>Width</source>
+        <translation>Širina</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Height</source>
+        <translation>Višina</translation>
     </message>
 </context>
 <context>

@@ -31,12 +31,12 @@
     <message>
         <location filename="../Leader.ui" line="+23"/>
         <source>Undo Last Segement</source>
-        <translation type="unfinished"></translation>
+        <translation>Razveljavi zadnji segment</translation>
     </message>
     <message>
         <location line="+14"/>
         <source>Arrow head</source>
-        <translation type="unfinished"></translation>
+        <translation>Puščica</translation>
     </message>
 </context>
 </TS>
